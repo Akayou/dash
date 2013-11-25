@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Customize style</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <style>
+      body {
+        text-align: center;
+      }      
+      #g1, #g2, #g3, #g4 {
+        width:200px; height:160px;
+				float:left;
+        margin: 1em;
+      }          
+      p {
+        display: block;
+        width: 450px;
+        margin: 2em auto;
+        text-align: left;
+      }
+			#geral{
+				width:475px;
+				border-radius: 10px;
+				display: inline-block;
+				box-shadow:inset 0px 0px 10px #000;
+				padding: 20px;}
+    </style>
+    
+    <script src="resources/js/raphael.2.1.0.min.js"></script>
+    <script src="resources/js/justgage.1.0.1.min.js"></script>
+    <script>
+      var g1, g2, g3, g4;
+			var valor1_g1 = 50; 
+			var valor1_g2 = 100; 
+			var valor1_g3 = 150; 
+			var valor1_g4 = 200;  
+			     
+      window.onload = function(){				
+					var g1 = new JustGage({
+						id: "g1", 
+						value: valor1_g1, 
+						min: 0,
+						max: 500,
+						title: "Pedro",
+						label: "Valor"        
+					});					
+		
+					var g2 = new JustGage({
+						id: "g2", 
+						value: valor1_g2, 
+						min: 0,
+						max: 500,
+						title: "Pedro",
+						label: "Valor"        
+					});				
+			
+					var g3 = new JustGage({
+						id: "g3", 
+						value: valor1_g3, 
+						min: 0,
+						max: 500,
+						title: "Pedro",
+						label: "Valor"        
+					});				
+		
+					var g4 = new JustGage({
+						id: "g4", 
+						value: valor1_g4, 
+						min: 0,
+						max: 500,
+						title: "Pedro",
+						label: "Valor"        
+					});
+									
+					setInterval(function() {
+						g1.refresh(valor1_g1);
+						g2.refresh(valor1_g2);
+          	g3.refresh(valor1_g3);        
+          	g4.refresh(valor1_g4);
+					}, 2500);
+      };
+    </script>
+
+	</head>
+  <body> 
+  <div id="geral">   
+    <div id="g1"></div>
+    <div id="g2"></div>
+    <div id="g3"></div>
+    <div id="g4"></div>
+  </div>  
+  </body>
+</html>
